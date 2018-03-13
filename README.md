@@ -9,7 +9,7 @@ Documentation by TDK InvenSense:
 
 ## Arduino Library
 
-The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed with a ICP-10100, but should work with the other sensors of the family.
+The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed and tested with the ICP-10100, but should work with the other sensors of the family.
 
 The library includes 3 examples that demonstrate its use.
 
