@@ -1,0 +1,20 @@
+# Datatypes (KEYWORD1)
+
+ICP101xx		KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+
+begin			KEYWORD2
+isConnected		KEYWORD2
+measure			KEYWORD2
+measureStart	KEYWORD2
+dataReady		KEYWORD2
+getTemperatureC	KEYWORD2
+getPressurePa	KEYWORD2
+
+# Constants (KEYWORD3)
+
+FAST			LITERAL1
+NORMAL			LITERAL1
+ACCURATE		LITERAL1
+VERY_ACCURATE	LITERAL1
