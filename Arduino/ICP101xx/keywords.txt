@@ -10,6 +10,7 @@ measure			KEYWORD2
 measureStart	KEYWORD2
 dataReady		KEYWORD2
 getTemperatureC	KEYWORD2
+getTemperatureF KEYWORD2
 getPressurePa	KEYWORD2
 
 # Constants (KEYWORD3)

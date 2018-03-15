@@ -66,14 +66,14 @@ The method `measure` performs a measurement, and returns when it is complete.
 
 The time to complete a measurement depends on the selected sensor mode that can be passed as an optional parameter. The options are:
 
-|Mode|Duration|Noise||
-|--|--|--||
-|FAST|3 ms|±3.2 Pa||
+|Mode|Duration|Noise|Notes|
+|--|--|--|--|
+|FAST|3 ms|±3.2 Pa| |
 |NORMAL|7 ms|±1.6 Pa|default|
-|ACCURATE|24 ms|±0.8 Pa||
-|VERY_ACCURATE|95 ms|±0.4 Pa||
+|ACCURATE|24 ms|±0.8 Pa| |
+|VERY_ACCURATE|95 ms|±0.4 Pa| |
 
-If no mode is specified, NORMAL will be used.
+If mode is not specified, NORMAL will be used.
 
 ```
 mysensor.measure(mysensor.VERY_ACCURATE);	// high accuracy measurement
