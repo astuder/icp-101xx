@@ -1,6 +1,6 @@
 # ICP-101xx Library and Breakout Board
 
-The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy barometric perssure sensors. These sensors can measure pressure difference of as little as +/- 1 Pascal, which is equivalent to altitude differences of 8.5cm.
+The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy barometric pressure sensors. These sensors can measure pressure difference of as little as +/- 1 Pascal, which is equivalent to altitude differences of 8.5cm.
 
 Documentation by TDK InvenSense:
 * Product page: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
@@ -9,13 +9,13 @@ Documentation by TDK InvenSense:
 
 ## Arduino Library
 
-The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed and tested with the ICP-10100, but should work with the other sensors of the family.
+The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed and tested with the ICP-10100 but should work with the other sensors of the family.
 
 The library includes 3 examples that demonstrate its use.
 
 ### The ICP101xx Object
 
-Use the `ICP101xx` object to create an instance of the sensor. For example by declaring a global variable:
+Use the `ICP101xx` object to create an instance of the sensor. For example, by declaring a global variable:
 
 ```
 ICP101xx mysensor;
@@ -57,12 +57,12 @@ if (mysensor.isConnected()) {
 
 `isConnected` will return false in the following situations:
 
-- No response from the sensor. Check you connections and pull-up resistors.
+- No response from the sensor. Check your connections and pull-up resistors.
 - Sensor responds with an unknown or unsupported device ID.
 
 ### measure()
 
-The method `measure` performs a measurement, and returns when it is complete.
+The method `measure` performs a measurement and doesn't return control until the measurement is completed.
 
 The time to complete a measurement depends on the selected sensor mode that can be passed as an optional parameter. The options are:
 
@@ -73,18 +73,23 @@ The time to complete a measurement depends on the selected sensor mode that can 
 |ACCURATE|24 ms|±0.8 Pa| |
 |VERY_ACCURATE|95 ms|±0.4 Pa| |
 
-If mode is not specified, NORMAL will be used.
-
 ```
 mysensor.measure(mysensor.VERY_ACCURATE);	// high accuracy measurement
 // process data
 ```
 
+If mode is not specified, NORMAL will be used.
+
+```
+mysensor.measure();	  // normal measurement
+// process data
+```
+
 ### measureStart(), dataReady()
 
-Sometimes you may not want to wait idly until a measurement is complete, but do something useful while the sensor is busy. Especially when using the VERY_ACCURATE mode, which takes almost 100ms to complete.
+Sometimes you may not want to wait idly until a measurement is complete but do something useful while the sensor is busy. Especially when using the VERY_ACCURATE mode, which takes almost 100ms to complete.
 
-`measureStart` initates a new measurement and immediatly returns control to the calling program. Like the method `measure`, an optional parameter can be used to specify the accuracy. You can then use `dataReady` to check whether the sensor completed its task.
+`measureStart` initiates a new measurement and immediately returns control to the calling program. Like the method `measure`, an optional parameter can be used to specify the accuracy. You can then use `dataReady` to check whether the sensor completed its task.
 
 ```
 mysensor.measureStart(mysensor.VERY_ACCURATE);
@@ -96,7 +101,7 @@ while (!mysensor.dataReady()) {
 
 ### readPressurePa()
 
-When measurement is complete, the results are stored in the mysensor object and can be read with dedicated methods.
+When measurement is complete, the result is stored in the sensor object and can be read with the `readPressurePa` method.
 
 `readPressurePa` returns the pressure in Pascal (Pa) as a `float`.
 
@@ -119,7 +124,7 @@ Pascal is mostly of interest to measure tiny pressure differences. For absolute 
 
 ### readTemperatureC(), readTemperatureF()
 
-The ICP-101xx also includes a very precise temperature sensor with an absolute accuracy of ±0.4 Celcius. The temperature is sampled together with the pressure during each measurement cylce. Use readTemperatureC or readTemperatureF to get the temperature in Celsius or Fahrenheit respectively.
+The ICP-101xx also includes a very precise temperature sensor with an absolute accuracy of ±0.4 Celsius. The temperature is sampled together with the pressure during each measurement cycle. Use readTemperatureC or readTemperatureF to get the temperature as `float` in Celsius or Fahrenheit respectively.
 
 ```
 mysensor.measure();
