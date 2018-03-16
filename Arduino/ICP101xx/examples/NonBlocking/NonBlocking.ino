@@ -13,6 +13,8 @@
  Written by Adrian Studer.
 ******************************************************************/
 
+#include <icp101xx.h>
+
 // Sensor is an ICP101xx object
 ICP101xx sensor;
 
