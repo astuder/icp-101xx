@@ -18,9 +18,6 @@
 // Sensor is an ICP101xx object
 ICP101xx sensor;
 
-// variable to keep initial pressure as reference point
-float reference_pressure = 0.0;
-
 void setup() {
   // Initialize sensor.
   // Optional: Pass pointer to Wire to use other than default I2C port.
