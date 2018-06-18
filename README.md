@@ -2,7 +2,7 @@
 
 The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy barometric pressure sensors. These sensors can measure pressure difference of as little as +/- 1 Pascal, which is equivalent to altitude differences of 8.5cm.
 
-![sensor demonstration plot](./Images/sensor-plot.png)
+![sensor demonstration plot](./extras/Images/sensor-plot.png)
 
 Documentation by TDK InvenSense:
 * Product page: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
@@ -137,19 +137,19 @@ Serial.println(" Fahrenheit");
 
 ## Breakout Board
 
-This repository includes the schematic and layout files for a small breakout board. 
+This repository includes the schematic and layout files for a small breakout board in the extras/KiCad folder. 
 
-![Rev C layout](./Images/breakout-layout.png)
+![Rev C layout](./extras/Images/breakout-layout.png)
 
 The ICP-101xx is a 1.8V part, but the breakout board includes a voltage regulator and I2C level-shifter. This allows to interface the sensor to more common 2.8V, 3.3V or 5V logic.
 
 The sensor can be separated from the rest of the breakout board, for example to put into confined and/or exposed spaces.
 
-![Assembled rev B breakout boards](./Images/breakout-rev-b.jpg)
+![Assembled rev B breakout boards](./extras/Images/breakout-rev-b.jpg)
 
 The breakout board was designed with Kicad 4.0.7. You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/5VY0IcwY)
 
-![OSH Park PCBs](./Images/breakout-oshpark.png)
+![OSH Park PCBs](./extras/Images/breakout-oshpark.png)
 
 Soldering the sensor requires a solder paste stencil and a hot air gun or reflow oven.
 
