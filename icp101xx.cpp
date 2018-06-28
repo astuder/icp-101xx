@@ -145,11 +145,11 @@ float ICP101xx::getPressurePa(void) {
 }
 
 void ICP101xx::_calculate(void) {
-	// calculate temperature  
-	float t = -45.f + 175.f / 65536.f * _raw_t;
-	_temperature_C = t;
+	// calculate temperature
+	_temperature_C = -45.f + 175.f / 65536.f * _raw_t;
 
 	// calculate pressure
+	float t = (float)(_raw_t - 32768);
 	float s1 = _lut_lower + (float)(_scal[0] * t * t) * _quadr_factor;
 	float s2 = _offst_factor * _scal[3] + (float)(_scal[1] * t * t) * _quadr_factor;
 	float s3 = _lut_upper + (float)(_scal[2] * t * t) * _quadr_factor;
