@@ -27,8 +27,8 @@
 
 // constants for presure calculation
 const float _pcal[3] = { 45000.0, 80000.0, 105000.0 };
-const float _lut_lower = 3.5 * (1<<20);
-const float _lut_upper = 11.5 * (1<<20);
+const float _lut_lower = 3.5 * 0x100000;	// 1<<20
+const float _lut_upper = 11.5 * 0x100000;	// 1<<20
 const float _quadr_factor = 1 / 16777216.0;
 const float _offst_factor = 2048.0;
 
@@ -124,7 +124,10 @@ bool ICP101xx::dataReady(void) {
 	uint8_t res_buf[9];
 	_readResponse(res_buf, 9);
 	_raw_t = (res_buf[0] << 8) | res_buf[1];
-	_raw_p = (res_buf[3] << 16) | (res_buf[4] << 8) | res_buf[6];
+	uint32_t L_res_buf3 = res_buf[3];	// expand result bytes to 32bit to fix issues on 8-bit MCUs
+	uint32_t L_res_buf4 = res_buf[4];
+	uint32_t L_res_buf6 = res_buf[6];
+	_raw_p = (L_res_buf3 << 16) | (L_res_buf4 << 8) | L_res_buf6;
 	_calculate();
 
 	_data_ready = true;
