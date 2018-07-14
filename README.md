@@ -101,16 +101,16 @@ while (!mysensor.dataReady()) {
 // the sensor is done, process the data
 ```
 
-### readPressurePa()
+### getPressurePa()
 
-When measurement is complete, the result is stored in the sensor object and can be read with the `readPressurePa` method.
+When measurement is complete, the result is stored in the sensor object and can be read with the `getPressurePa` method.
 
-`readPressurePa` returns the pressure in Pascal (Pa) as a `float`.
+`getPressurePa` returns the pressure in Pascal (Pa) as a `float`.
 
 ```
 mysensor.measure();
 Serial.print("Pressure is ");
-Serial.print(mysensor.readPressure);
+Serial.print(mysensor.getPressure);
 Serial.println(" Pa");
 ```
 
@@ -124,14 +124,14 @@ Pascal is mostly of interest to measure tiny pressure differences. For absolute 
 |inHg|Pa / 3386.389|
 |atm|Pa / 101325|
 
-### readTemperatureC(), readTemperatureF()
+### getTemperatureC(), getTemperatureF()
 
-The ICP-101xx also includes a very precise temperature sensor with an absolute accuracy of ±0.4 Celsius. The temperature is sampled together with the pressure during each measurement cycle. Use readTemperatureC or readTemperatureF to get the temperature as `float` in Celsius or Fahrenheit respectively.
+The ICP-101xx also includes a very precise temperature sensor with an absolute accuracy of ±0.4 Celsius. The temperature is sampled together with the pressure during each measurement cycle. Use `getTemperatureC` or `getTemperatureF` to get the temperature as `float` in Celsius or Fahrenheit respectively.
 
 ```
 mysensor.measure();
 Serial.print("The current temperature is ");
-Serial.print(mysensor.readTemperatureF());
+Serial.print(mysensor.getTemperatureF());
 Serial.println(" Fahrenheit");
 ```
 
