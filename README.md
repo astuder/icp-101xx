@@ -6,7 +6,7 @@ The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy b
 
 Documentation by TDK InvenSense:
 * Product page: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
-* Datasheet: [ICP-101xx](http://www.invensense.com/wp-content/uploads/2018/01/DS-000186-ICP-101xx-v1.0.pdf)
+* Datasheet: [ICP-101xx](https://www.invensense.com/download-pdf/icp-101xx-datasheet/)
 * Application Note: [Differential Pressure Sensing for Drones](https://www.invensense.com/download-pdf/an-000119-differential-pressure-sensing-using-icm-20789-for-altitude-hold-in-drones/)
 
 ## Arduino Library
