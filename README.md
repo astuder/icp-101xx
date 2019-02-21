@@ -68,12 +68,12 @@ The method `measure` performs a measurement and doesn't return control until the
 
 The time to complete a measurement depends on the selected sensor mode that can be passed as an optional parameter. The options are:
 
-|Mode|Duration|Noise|Notes|
-|--|--|--|--|
-|FAST|3 ms|±3.2 Pa| |
-|NORMAL|7 ms|±1.6 Pa|default|
-|ACCURATE|24 ms|±0.8 Pa| |
-|VERY_ACCURATE|95 ms|±0.4 Pa| |
+|Mode|Duration|Noise|[Sensor Mode](http://www.invensense.com/wp-content/uploads/2019/02/DS-000186-ICP-101xx-v1.1.pdf#%5B%7B%22num%22%3A12%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C34%2C530%2C0%5D)|Notes|
+|--|--|--|--|--|
+|FAST|3 ms|±3.2 Pa|Low Power (LP)| |
+|NORMAL|7 ms|±1.6 Pa|Normal (N)|default|
+|ACCURATE|24 ms|±0.8 Pa|Low Noise (LN)| |
+|VERY_ACCURATE|95 ms|±0.4 Pa|Ultra Low Noise (ULN)| |
 
 ```
 mysensor.measure(mysensor.VERY_ACCURATE);	// high accuracy measurement
