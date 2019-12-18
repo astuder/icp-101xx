@@ -110,7 +110,7 @@ When measurement is complete, the result is stored in the sensor object and can 
 ```
 mysensor.measure();
 Serial.print("Pressure is ");
-Serial.print(mysensor.getPressure);
+Serial.print(mysensor.getPressurePa());
 Serial.println(" Pa");
 ```
 
