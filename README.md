@@ -135,6 +135,10 @@ Serial.print(mysensor.readTemperatureF());
 Serial.println(" Fahrenheit");
 ```
 
+## Arduino Library
+
+This repository includes a basic library compatible with the STM32 HAL [here](./extras/stm32-hal).
+
 ## Breakout Board
 
 This repository includes the schematic and layout files for a small breakout board in the extras/KiCad folder. 
