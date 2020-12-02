@@ -6,7 +6,7 @@ The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy b
 
 Documentation by TDK InvenSense:
 * Product page: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
-* Datasheet: [ICP-101xx](http://www.invensense.com/wp-content/uploads/2018/01/DS-000186-ICP-101xx-v1.0.pdf)
+* Datasheet: [ICP-101xx](https://www.invensense.com/download-pdf/icp-101xx-datasheet/)
 * Application Note: [Differential Pressure Sensing for Drones](https://www.invensense.com/download-pdf/an-000119-differential-pressure-sensing-using-icm-20789-for-altitude-hold-in-drones/)
 
 ## Arduino Library
@@ -68,12 +68,12 @@ The method `measure` performs a measurement and doesn't return control until the
 
 The time to complete a measurement depends on the selected sensor mode that can be passed as an optional parameter. The options are:
 
-|Mode|Duration|Noise|Notes|
-|--|--|--|--|
-|FAST|3 ms|±3.2 Pa| |
-|NORMAL|7 ms|±1.6 Pa|default|
-|ACCURATE|24 ms|±0.8 Pa| |
-|VERY_ACCURATE|95 ms|±0.4 Pa| |
+|Mode|Duration|Noise|[Sensor Mode](http://www.invensense.com/wp-content/uploads/2019/02/DS-000186-ICP-101xx-v1.1.pdf#%5B%7B%22num%22%3A12%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C34%2C530%2C0%5D)|Notes|
+|--|--|--|--|--|
+|FAST|3 ms|±3.2 Pa|Low Power (LP)| |
+|NORMAL|7 ms|±1.6 Pa|Normal (N)|default|
+|ACCURATE|24 ms|±0.8 Pa|Low Noise (LN)| |
+|VERY_ACCURATE|95 ms|±0.4 Pa|Ultra Low Noise (ULN)| |
 
 ```
 mysensor.measure(mysensor.VERY_ACCURATE);	// high accuracy measurement
@@ -101,16 +101,16 @@ while (!mysensor.dataReady()) {
 // the sensor is done, process the data
 ```
 
-### readPressurePa()
+### getPressurePa()
 
-When measurement is complete, the result is stored in the sensor object and can be read with the `readPressurePa` method.
+When measurement is complete, the result is stored in the sensor object and can be read with the `getPressurePa` method.
 
-`readPressurePa` returns the pressure in Pascal (Pa) as a `float`.
+`getPressurePa` returns the pressure in Pascal (Pa) as a `float`.
 
 ```
 mysensor.measure();
 Serial.print("Pressure is ");
-Serial.print(mysensor.readPressure);
+Serial.print(mysensor.getPressurePa());
 Serial.println(" Pa");
 ```
 
@@ -124,14 +124,14 @@ Pascal is mostly of interest to measure tiny pressure differences. For absolute 
 |inHg|Pa / 3386.389|
 |atm|Pa / 101325|
 
-### readTemperatureC(), readTemperatureF()
+### getTemperatureC(), getTemperatureF()
 
-The ICP-101xx also includes a very precise temperature sensor with an absolute accuracy of ±0.4 Celsius. The temperature is sampled together with the pressure during each measurement cycle. Use readTemperatureC or readTemperatureF to get the temperature as `float` in Celsius or Fahrenheit respectively.
+The ICP-101xx also includes a very precise temperature sensor with an absolute accuracy of ±0.4 Celsius. The temperature is sampled together with the pressure during each measurement cycle. Use `getTemperatureC` or `getTemperatureF` to get the temperature as `float` in Celsius or Fahrenheit respectively.
 
 ```
 mysensor.measure();
 Serial.print("The current temperature is ");
-Serial.print(mysensor.readTemperatureF());
+Serial.print(mysensor.getTemperatureF());
 Serial.println(" Fahrenheit");
 ```
 
