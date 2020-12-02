@@ -135,7 +135,7 @@ Serial.print(mysensor.getTemperatureF());
 Serial.println(" Fahrenheit");
 ```
 
-## Arduino Library
+## STM32 Library
 
 This repository includes a basic library compatible with the STM32 HAL [here](./extras/stm32-hal).
 
