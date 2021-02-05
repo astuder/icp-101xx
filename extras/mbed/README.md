@@ -1,6 +1,6 @@
-# ICP-101xx library adopted to be used with STM32 HAL
+# ICP-101xx library adopted to be used with Mbed OS
 
-This is a basic adoption of the original Arduino library to be used with MbedOS.
+This is a basic adoption of the original Arduino library to be used with Mbed OS.
 
 The only difference to the Arduino library is the initialization with ```begin()```
 
