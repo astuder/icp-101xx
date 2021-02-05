@@ -9,7 +9,8 @@
  
  BSD license, check license.txt for more information.
  All text above must be included in any redistribution.
- ******************************************************************/
+ ******************************************************************/ 
+#include "mbed.h"
  
 #ifndef _icp101xx
 #define _icp101xx
@@ -22,7 +23,7 @@ class ICP101xx
 		enum mmode { FAST, NORMAL, ACCURATE, VERY_ACCURATE };
 
 		ICP101xx();
-		bool begin(I2C_HandleTypeDef* i2c_handle = NULL);
+		bool begin(I2C *i2c = NULL);
 		bool isConnected(void);
 		void measure(ICP101xx::mmode mode = ICP101xx::NORMAL);
 		uint8_t measureStart(ICP101xx::mmode mode = ICP101xx::NORMAL);
@@ -37,7 +38,7 @@ class ICP101xx
 		void _sendCommand(uint8_t *cmd_buf, uint8_t cmd_len);
 		void _readResponse(uint8_t *res_buf = NULL, uint8_t res_len = 0);
 
-		I2C_HandleTypeDef* _i2c_handle;
+		I2C *_i2c;
 		uint8_t _i2c_addr;
 		float _scal[4];
 		uint16_t _raw_t;

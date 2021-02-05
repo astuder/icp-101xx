@@ -1,6 +1,6 @@
 # ICP-101xx library adopted to be used with STM32 HAL
 
-This is a basic adoption of the original Arduino library to be used with the STM32 HAL.
+This is a basic adoption of the original Arduino library to be used with MbedOS.
 
 The only difference to the Arduino library is the initialization with ```begin()```
 
@@ -10,9 +10,10 @@ This library is currently lacking any HAL error handling.
 
 To initialize the sensor, use the `begin` method.
 
-To initialize, a pointer to the handle of an I2C peripheral must be provided. The handle must be of type ```I2C_HandleTypeDef```. For example:
+To initialize, a pointer to an [Mbed I2C Master interface](https://os.mbed.com/docs/mbed-os/v6.7/apis/i2c.html) must be provided. The handle must be of type ```I2C```. For example:
 
 ```
+I2C hi2c(sda, scl);
 mysensor.begin(&hi2c);
 ```
 
