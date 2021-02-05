@@ -9,6 +9,8 @@ Documentation by TDK InvenSense:
 * Datasheet: [ICP-101xx](https://www.invensense.com/download-pdf/icp-101xx-datasheet/)
 * Application Note: [Differential Pressure Sensing for Drones](https://www.invensense.com/download-pdf/an-000119-differential-pressure-sensing-using-icm-20789-for-altitude-hold-in-drones/)
 
+Besides the library for Arduino, this repository also includes basic libraries compatible with the STM32 HAL [here](./extras/stm32-hal) and Mbed OS [here](./extras/mbed).
+
 ## Arduino Library
 
 The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed and tested with the ICP-10100 but should work with the other sensors of the family.
@@ -134,10 +136,6 @@ Serial.print("The current temperature is ");
 Serial.print(mysensor.getTemperatureF());
 Serial.println(" Fahrenheit");
 ```
-
-## STM32 Library
-
-This repository includes a basic library compatible with the STM32 HAL [here](./extras/stm32-hal).
 
 ## Breakout Board
 
