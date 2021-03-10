@@ -138,11 +138,11 @@ Serial.println(" Fahrenheit");
 
 ## Breakout Boards
 
-This repository includes the design files for two styles of breakout boards in the extras/KiCad folder. These breakout boards were designed with Kicad 5.x. 
+This repository includes the design files for two styles of breakout boards in the folder [extras/KiCad](./extras/KiCad). These breakout boards were designed with Kicad 5.x. 
 
-The ICP-101xx is a 1.8V part, but the boards include a voltage regulator and I2C level-shifter. This allows to interface the sensor to more common 2.8V, 3.3V or 5V logic.
+The ICP-101xx is a 1.8V part, but the boards include a voltage regulator and I2C level-shifter. This allows to interface the sensor to 2.8V, 3.3V or 5V logic.
 
-Soldering the sensor requires a solder paste stencil and reflow oven or hotplate, though experienced tinkerers may manage to assemble it with just with a hot air station.
+Soldering the sensor requires a solder paste stencil and reflow oven or hotplate, though experienced tinkerers may manage to assemble it only using a hot air station.
 
 Contact me if you are interested in buying populated and tested breakout boards, I may have a few at hand. There's also an inexpensive breakout board by [Mikroe](https://www.mikroe.com/altitude-3-click) (search `MIKROE-3328` on Digi-Key, Mouser and other distributors), which should work with this library.
 
