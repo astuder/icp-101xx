@@ -5,11 +5,10 @@ The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy b
 ![sensor demonstration plot](./extras/Images/sensor-plot.png)
 
 Documentation by TDK InvenSense:
-* Product page: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
-* Datasheet: [ICP-101xx](https://www.invensense.com/download-pdf/icp-101xx-datasheet/)
+* Product page and datasheets: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
 * Application Note: [Differential Pressure Sensing for Drones](https://www.invensense.com/download-pdf/an-000119-differential-pressure-sensing-using-icm-20789-for-altitude-hold-in-drones/)
 
-Besides the library for Arduino, this repository also includes basic libraries compatible with the STM32 HAL [here](./extras/stm32-hal) and Mbed OS [here](./extras/mbed).
+Besides the [library for Arduino](#arduino-library), this repository also includes basic libraries compatible with the STM32 HAL [here](./extras/stm32-hal) and Mbed OS [here](./extras/mbed), and KiCad projects for [two breakout boards](#breakout-boards).
 
 ## Arduino Library
 
@@ -137,22 +136,34 @@ Serial.print(mysensor.getTemperatureF());
 Serial.println(" Fahrenheit");
 ```
 
-## Breakout Board
+## Breakout Boards
 
-This repository includes the schematic and layout files for a small breakout board in the extras/KiCad folder. 
+This repository includes the design files for two styles of breakout boards in the extras/KiCad folder. These breakout boards were designed with Kicad 5.x. 
 
-![Rev C layout](./extras/Images/breakout-layout.png)
+The ICP-101xx is a 1.8V part, but the boards include a voltage regulator and I2C level-shifter. This allows to interface the sensor to more common 2.8V, 3.3V or 5V logic.
 
-The ICP-101xx is a 1.8V part, but the breakout board includes a voltage regulator and I2C level-shifter. This allows to interface the sensor to more common 2.8V, 3.3V or 5V logic.
+Soldering the sensor requires a solder paste stencil and reflow oven or hotplate, though experienced tinkerers may manage to assemble it with just with a hot air station.
+
+Contact me if you are interested in buying populated and tested breakout boards, I may have a few at hand. There's also an inexpensive breakout board by [Mikroe](https://www.mikroe.com/altitude-3-click) (search `MIKROE-3328` on Digi-Key, Mouser and other distributors), which should work with this library.
+
+### Breakout Style
+
+![breakout style layout](./extras/Images/breakout-layout.png)
 
 The sensor can be separated from the rest of the breakout board, for example to put into confined and/or exposed spaces.
 
 ![Assembled rev B breakout boards](./extras/Images/breakout-rev-b.jpg)
 
-The breakout board was designed with Kicad 4.0.7. You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/5VY0IcwY)
+You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/2vvKCdQE)
 
-![OSH Park PCBs](./extras/Images/breakout-oshpark.png)
+### Probe Style
 
-Soldering the sensor requires a solder paste stencil and a hot air gun or reflow oven.
+A probe style breakout board, ideal to shove the sensor into narrow places.
 
-Contact me if you are interested in buying populated and tested breakout boards.
+![probe style layout](./extras/Images/probe-layout.png)
+
+This design works best with very thin or flexible PCB material.
+
+![Assembled probes on flex PCB](./extras/Images/flex-probe.jpg)
+
+You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/IjXrtBOE)

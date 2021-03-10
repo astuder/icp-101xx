@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ICP-10100
+D TDK ICP-10100
+K sensor barometric pressure
+$ENDCMP
+#
+#End Doc Library
