@@ -454,7 +454,7 @@ Wire Wire Line
 Text Notes 9200 2550 0    50   ~ 0
 VDD/SDA/SCL\nVin = 2.8V to 5V
 Text Notes 7000 2500 0    50   ~ 0
-Voltage Regulator\nVin to 1.8V
+Voltage Regulator\nVin to 1.8V\nSOT23R (reverse) footprint!
 Text Notes 6300 4550 0    50   ~ 0
 Level-Shifter\nVin to 1.8V
 Text Notes 2350 2450 0    50   ~ 0
