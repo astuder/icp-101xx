@@ -5,14 +5,14 @@ The TDK InvenSense ICP-101xx is a family of very low power, very high accuracy b
 ![sensor demonstration plot](./extras/Images/sensor-plot.png)
 
 Documentation by TDK InvenSense:
-* Product page and datasheets: [TDK InvenSense](https://www.invensense.com/products/1-axis/icp-101xx/)
+* Product pages and datasheets: [TDK InvenSense](https://invensense.tdk.com/smartpressure/)
 * Application Note: [Differential Pressure Sensing for Drones](https://www.invensense.com/download-pdf/an-000119-differential-pressure-sensing-using-icm-20789-for-altitude-hold-in-drones/)
 
 Besides the [library for Arduino](#arduino-library), this repository also includes basic libraries compatible with the STM32 HAL [here](./extras/stm32-hal) and Mbed OS [here](./extras/mbed), and KiCad projects for [two breakout boards](#breakout-boards).
 
 ## Arduino Library
 
-The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed and tested with the ICP-10100 but should work with the other sensors of the family.
+The Arduino library ICP101xx provides a simple API to read temperature and pressure. The library was developed and tested with the ICP-10100 and ICP-10125 but should also work with other sensors of the family.
 
 The library includes 3 examples that demonstrate its use.
 
