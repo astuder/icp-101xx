@@ -8,7 +8,7 @@ Documentation by TDK InvenSense:
 * Product pages and datasheets: [TDK InvenSense](https://invensense.tdk.com/smartpressure/)
 * Application Note: [Differential Pressure Sensing for Drones](https://www.invensense.com/download-pdf/an-000119-differential-pressure-sensing-using-icm-20789-for-altitude-hold-in-drones/)
 
-Besides the [library for Arduino](#arduino-library), this repository also includes basic libraries compatible with the STM32 HAL [here](./extras/stm32-hal) and Mbed OS [here](./extras/mbed), and KiCad projects for [two breakout boards](#breakout-boards).
+Besides the [library for Arduino](#arduino-library), this repository also includes basic libraries compatible with the STM32 HAL [here](./extras/stm32-hal) and Mbed OS [here](./extras/mbed), and KiCad projects for [three breakout boards](#breakout-boards).
 
 ## Arduino Library
 
@@ -138,7 +138,7 @@ Serial.println(" Fahrenheit");
 
 ## Breakout Boards
 
-This repository includes the design files for two styles of breakout boards in the folder [extras/KiCad](./extras/KiCad). These breakout boards were designed with Kicad 5.x. 
+This repository includes the design files for three breakout boards in the folder [extras/KiCad](./extras/KiCad). These breakout boards were designed with Kicad 5.x. 
 
 The ICP-101xx is a 1.8V part, but the boards include a voltage regulator and I2C level-shifter. This allows to interface the sensor to 2.8V, 3.3V or 5V logic.
 
@@ -146,7 +146,7 @@ Soldering the sensor requires a solder paste stencil and reflow oven or hotplate
 
 Contact me if you are interested in buying populated and tested breakout boards, I may have a few at hand. There's also an inexpensive breakout board by [Mikroe](https://www.mikroe.com/altitude-3-click) (search `MIKROE-3328` on Digi-Key, Mouser and other distributors), which should work with this library.
 
-### Breakout Style
+### ICP-10100 Breakout
 
 ![breakout style layout](./extras/Images/breakout-layout.png)
 
@@ -156,7 +156,7 @@ The sensor can be separated from the rest of the breakout board, for example to 
 
 You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/2vvKCdQE)
 
-### Probe Style
+### ICP-10100 Probe
 
 A probe style breakout board, ideal to shove the sensor into narrow places.
 
@@ -167,3 +167,15 @@ This design works best with very thin or flexible PCB material.
 ![Assembled probes on flex PCB](./extras/Images/flex-probe.jpg)
 
 You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/IjXrtBOE)
+
+### ICP-10125 Breakout
+
+![ICP-10125 breakout layout](./extras/Images/icp-10125-breakout-layout.png)
+
+A breakout board for the new [ICP-10125](https://invensense.tdk.com/products/1-axis/icp-10125/) pressure sensor.
+
+This part is larger than the ICP-10100 and may be easier to assemble, though the pads are still under the component.
+
+![Assembled ICP-10125 breakout boards](./extras/Images/icp-10125-breakout.jpg)
+
+You can order the PCB on [OSH Park](https://oshpark.com/shared_projects/CTwkdHlc)

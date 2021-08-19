@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP7313
+D Positive 150mA 6V Linear Regulator, Fixed Output 1.8V, SOT-23
+K Voltage Regulator 150mA Positive
+F https://www.diodes.com/assets/Datasheets/AP7313.pdf
+$ENDCMP
+#
+$CMP AP7313R
+D Positive 150mA 6V Linear Regulator, Fixed Output 1.8V, SOT-23
+K Voltage Regulator 150mA Positive
+F https://www.diodes.com/assets/Datasheets/AP7313.pdf
+$ENDCMP
+#
+#End Doc Library
